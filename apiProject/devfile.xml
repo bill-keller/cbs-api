@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: cbsa-api
+  name: cbsa-api-zosconnect
 attributes:
   controller.devfile.io/storage-type: ephemeral
 projects:
@@ -9,7 +9,7 @@ projects:
         revision: main
       remotes:
         origin: 'https://github.com/bill-keller/cbsa-api.git'
-    name: cbsa-api
+    name: cbsa-api-zosconnect
 components:
     - name: zosconnect
       container:
@@ -21,7 +21,7 @@ components:
             targetPort: 9080
         env:
           - name: ZCON_DESIGNER_PROJECT
-            value: /projects/cbsa-api/apiProject
+            value: /projects/cbsa-api-zosconnect/apiProject
         image: 'icr.io/zosconnect/ibm-zcon-designer:3.0.76'
         memoryLimit: 4927M
         mountSources: true
